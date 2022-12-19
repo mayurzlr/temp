@@ -4,5 +4,5 @@ requests
 scikit-learn
 streamlit
 wordcloud
-cloudpickle==0.1.0
+cloudpickle==2.2.0
 urllib
