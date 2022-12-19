@@ -3,6 +3,7 @@ import requests
 import streamlit as st
 import pickle
 import pandas as pd
+import cloudpickle as cp
 
 def fetch_poster(movie_id):
     url = "https://api.themoviedb.org/3/movie/{}?api_key=8265bd1679663a7ea12ac168da84d2e8&language=en-US".format(movie_id)
@@ -28,7 +29,10 @@ def recommend(movie):
 movies_dict = pickle.load(open('movie_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
 
-similarity = pickle.load(open('https://github.com/charanhu/Movie_Recommender_System_Content_Based/blob/master/similarity.pkl', 'rb'))
+from urllib.request import urlopen
+# loaded_pickle_object = cp.load(urlopen("https://drive.google.com/file/d/pickled_file", 'rb')) 
+
+similarity = cp.load(urlopen('https://github.com/charanhu/Movie_Recommender_System_Content_Based/blob/master/similarity.pkl', 'rb'))
 
 st.title("Movie Recommendation System using Content Based Filtering")
 
