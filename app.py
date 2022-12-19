@@ -28,7 +28,7 @@ def recommend(movie):
 movies_dict = pickle.load(open('movie_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
 
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+similarity = pickle.load(open('https://drive.google.com/file/d/10dI2IaXmT-Zw1fe3YuWgJz224yizr0qz/view?usp=sharing', 'rb'))
 
 st.title("Movie Recommendation System using Content Based Filtering")
 
